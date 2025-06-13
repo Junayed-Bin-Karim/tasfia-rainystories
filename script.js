@@ -50,3 +50,75 @@ function toggleContent(contentId) {
     // স্মুথ স্ক্রোলিং টু বাটন
     button.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const rainContainer = document.getElementById('rain-container');
+    const rainIntensity = 100; // Number of raindrops
+    
+    // Create raindrops
+    for (let i = 0; i < rainIntensity; i++) {
+        createRaindrop();
+    }
+    
+    function createRaindrop() {
+        const drop = document.createElement('div');
+        drop.classList.add('drop');
+        
+        // Random position and animation duration
+        const left = Math.random() * 100;
+        const duration = 0.5 + Math.random() * 1.5;
+        const delay = Math.random() * 2;
+        
+        drop.style.left = `${left}%`;
+        drop.style.top = `${-20}px`;
+        drop.style.animationDuration = `${duration}s`;
+        drop.style.animationDelay = `${delay}s`;
+        
+        rainContainer.appendChild(drop);
+        
+        // Create splash when drop hits bottom
+        setTimeout(() => {
+            createSplash(left);
+            
+            // Remove drop after animation completes
+            setTimeout(() => {
+                drop.remove();
+                createRaindrop(); // Create new drop to replace this one
+            }, duration * 1000);
+        }, delay * 1000);
+    }
+    
+    function createSplash(left) {
+        const splash = document.createElement('div');
+        splash.classList.add('splash');
+        
+        splash.style.left = `${left}%`;
+        splash.style.bottom = '0';
+        
+        rainContainer.appendChild(splash);
+        
+        // Remove splash after animation completes
+        setTimeout(() => {
+            splash.remove();
+        }, 500);
+    }
+    
+    // Adjust for window resize
+    window.addEventListener('resize', function() {
+        const drops = document.querySelectorAll('.drop');
+        drops.forEach(drop => {
+            const currentLeft = parseFloat(drop.style.left);
+            drop.style.left = `${(currentLeft / 100) * window.innerWidth}px`;
+        });
+    });
+});
