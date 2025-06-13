@@ -1,0 +1,488 @@
+/* বেসিক স্টাইল */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --text-light: #7f8c8d;
+    --font-primary: 'Hind Siliguri', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* হেডার স্টাইল */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    color: var(--light-color);
+    font-style: italic;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* হিরো সেকশন */
+.hero {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* অধ্যায় সেকশন */
+.section-title {
+    text-align: center;
+    margin: 3rem 0;
+    font-size: 2rem;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 0.5rem auto;
+}
+
+.chapters {
+    padding: 3rem 0;
+}
+
+.chapter-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.chapter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.chapter-header {
+    padding: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.chapter-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.chapter-meta {
+    font-size: 0.9rem;
+    color: var(--light-color);
+    font-style: italic;
+}
+
+.chapter-content {
+    padding: 1.5rem;
+}
+
+.chapter-content p {
+    margin-bottom: 1rem;
+}
+
+.message {
+    background-color: #f0f0f0;
+    border-left: 4px solid var(--secondary-color);
+    padding: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    border-radius: 0 4px 4px 0;
+}
+
+.read-more-btn {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.expandable-content.show {
+    max-height: 5000px; /* পর্যাপ্ত বড় মান */
+}
+
+/* লেখক সম্পর্কে সেকশন */
+.about {
+    background-color: var(--light-color);
+    padding: 3rem 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.author-info {
+    text-align: center;
+    max-width: 600px;
+}
+
+.author-info h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.author-info p {
+    margin-bottom: 1rem;
+}
+
+/* ফুটার */
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* রেস্পন্সিভ ডিজাইন */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 0.8rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .chapter-header h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 3rem 0;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .chapter-header {
+        padding: 1rem;
+    }
+
+    .chapter-content {
+        padding: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Chapter 3 Styles */
+.letter-content {
+    font-family: 'Hind Siliguri', sans-serif;
+    line-height: 1.8;
+    color: #333;
+    padding: 20px;
+}
+
+.letter-date {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.memory-section, .appreciation-section, .promise-section {
+    margin-bottom: 30px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.memory-section {
+    background-color: #f8f9fa;
+    border-left: 4px solid #3498db;
+}
+
+.appreciation-section {
+    background-color: #f1f8fe;
+    border-left: 4px solid #e74c3c;
+}
+
+.promise-section {
+    background-color: #f9f4ff;
+    border-left: 4px solid #9b59b6;
+}
+
+.lesson-box {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-style: italic;
+    border-left: 3px solid #f1c40f;
+}
+
+.memory-list, .promise-list {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.memory-list li, .promise-list li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.memory-list li:before, .promise-list li:before {
+    content: "•";
+    color: #e74c3c;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+.letter-signature {
+    font-weight: 700;
+    margin-top: 30px;
+    font-style: italic;
+}
+
+.letter-ps {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* Chapter 4 Styles */
+.future-content {
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.scenario-section {
+    margin: 30px 0;
+}
+
+.scenario {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.rainy-day {
+    background-color: #e8f4fc;
+    border-left: 4px solid #3498db;
+}
+
+.coffee-shop {
+    background-color: #f5e9dd;
+    border-left: 4px solid #e67e22;
+}
+
+.unexpected {
+    background-color: #e8f5e9;
+    border-left: 4px solid #2ecc71;
+}
+
+.memory-box {
+    background-color: #f0f8ff;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+
+.memory-box ul {
+    padding-left: 20px;
+}
+
+.memory-box li {
+    margin-bottom: 10px;
+}
+
+.closing-thought {
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.final-line {
+    margin-top: 15px;
+    font-weight: 600;
+}
