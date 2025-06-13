@@ -685,3 +685,138 @@ body {
         font-size: 1rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Cute & Soft Header Background */
+header {
+  background: #9c206c;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: top 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3); /* soft pink shadow */
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container */
+header .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 1.9rem;
+  color: #f4f3f3;  /* pretty pink */
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-family: 'Baloo 2', cursive; /* playful font */
+  text-shadow: 1px 1px 3px #f8bbd0;
+}
+
+.logo p {
+  font-size: 1.05rem;
+  color: #e8dee1; /* lighter pink */
+  margin-top: 5px;
+  font-style: italic;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px #fad1dc;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #d6336c;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #ffe6f0;
+  box-shadow: 0 3px 6px rgba(246, 182, 210, 0.5);
+  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+  font-family: 'Baloo 2', cursive;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background: #d6336c;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(214, 51, 108, 0.7);
+  outline: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    align-items: center;
+  }
+
+  nav ul li a {
+    width: 80%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.2rem;
+  }
+}
+
+/* Smaller devices */
+@media (max-width: 400px) {
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+
+  .logo p {
+    font-size: 0.95rem;
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+    padding: 10px 0;
+    width: 90%;
+  }
+}
+
+

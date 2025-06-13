@@ -122,3 +122,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
+
+
+
+
+
+
+
+
+  let lastScrollY = window.scrollY;
+  const header = document.querySelector('header');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY) {
+      // Scrolling Down
+      header.style.top = '-100px'; // hide
+    } else {
+      // Scrolling Up
+      header.style.top = '0'; // show
+    }
+    lastScrollY = window.scrollY;
+  });
+
