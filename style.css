@@ -56,10 +56,6 @@ header.hidden {
     top: -100px; /* উপরের দিকে চলে যাবে */
 }
 
-/* স্ক্রল করলে হেডারের রং একটু গাঢ় পিঙ্ক হবে */
-header.scrolled {
-    background-color: var(--secondary-color);
-}
 
 /* বাকি সব আগের মতোই থাকবে */
 header .container {

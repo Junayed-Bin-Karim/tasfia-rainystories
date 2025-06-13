@@ -144,12 +144,5 @@ window.addEventListener('scroll', () => {
     header.classList.remove('hidden');
   }
   
-  // যদি স্ক্রল 50px এর বেশি হয়, তখন রং গাঢ় পিঙ্ক হবে
-  if (scrollTop > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
-
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  
 });
