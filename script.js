@@ -143,6 +143,6 @@ window.addEventListener('scroll', () => {
   } else {
     header.classList.remove('hidden');
   }
-  
-  
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
