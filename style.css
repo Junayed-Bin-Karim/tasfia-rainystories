@@ -820,3 +820,17 @@ nav ul li a:focus {
 }
 
 
+/* মোবাইলের জন্য nav ul li a এর টেক্সট কাটার জন্য */
+@media (max-width: 768px) {
+  nav ul li a {
+    width: 80%;
+    text-align: center;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    
+    white-space: nowrap;       /* এক লাইনে রাখবে */
+    overflow: hidden;          /* ওভারফ্লো লুকাবে */
+    text-overflow: ellipsis;   /* তিন ডট দেখাবে */
+    display: block;            /* ব্লক এলিমেন্ট বানাবে */
+  }
+}
