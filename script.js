@@ -140,7 +140,7 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
 
-// Scroll hide/show header
+// হেডার স্ক্রল হাইড/শো
 let lastScrollTop = 0;
 const header = document.querySelector('header');
 
@@ -148,10 +148,10 @@ window.addEventListener('scroll', () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   if(scrollTop > lastScrollTop){
-    // Scroll down — hide header
+    // নিচে স্ক্রল করলে হেডার লুকাবে
     header.classList.add('hidden');
   } else {
-    // Scroll up — show header
+    // উপরে স্ক্রল করলে হেডার আবার আসবে
     header.classList.remove('hidden');
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
