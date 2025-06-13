@@ -131,28 +131,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navLinks.classList.toggle('active');
-});
-
-// হেডার স্ক্রল হাইড/শো
-let lastScrollTop = 0;
 const header = document.querySelector('header');
+let lastScrollTop = 0;
 
 window.addEventListener('scroll', () => {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-  if(scrollTop > lastScrollTop){
-    // নিচে স্ক্রল করলে হেডার লুকাবে
+  // স্ক্রল ডাউন করলে হেডার লুকাবে, স্ক্রল আপ করলে দেখাবে
+  if (scrollTop > lastScrollTop && scrollTop > 50) {
     header.classList.add('hidden');
   } else {
-    // উপরে স্ক্রল করলে হেডার আবার আসবে
     header.classList.remove('hidden');
   }
+  
+  // যদি স্ক্রল 50px এর বেশি হয়, তখন রং গাঢ় পিঙ্ক হবে
+  if (scrollTop > 50) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });

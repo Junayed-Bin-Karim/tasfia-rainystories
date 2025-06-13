@@ -29,262 +29,98 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
+
+
+
+/* রংগুলো ডিফাইন করা (তুমি আগে দিয়েছো নিশ্চয়) */
 :root {
-  --primary-color: #9c206c;
-  --secondary-color: #d6336c;
+  --primary-color: #9c206c;       /* পিঙ্ক পছন্দমত রং */
+  --secondary-color: #d6336c;     /* পিঙ্কের ডার্কার শেড */
   --light-color: #f4f3f3;
 }
 
-/* হেডার স্টাইল */
+/* তোমার আগের হেডার স্টাইল */
 header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: top 0.3s ease;
-}
-
-header.hidden {
-  top: -100px; /* হেডার লুকিয়ে যাবে উপরে */
-}
-
-header .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-/* লোগো */
-.logo h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  font-family: 'Baloo 2', cursive;
-}
-
-.logo p {
-  font-size: 0.9rem;
-  color: var(--light-color);
-  font-style: italic;
-}
-
-/* নেভিগেশন */
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 1.5rem;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-  padding: 0.5rem 0;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-}
-
-nav ul li a:hover {
-  color: var(--secondary-color);
-}
-
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--secondary-color);
-  transition: width 0.3s;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-
-
-
-
-:root {
-  --primary-color: #9c206c;
-  --secondary-color: #d6336c;
-  --light-color: #f4f3f3;
-}
-
-/* হেডার স্টাইল */
-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: top 0.3s ease;
-}
-
-header.hidden {
-  top: -100px; /* স্ক্রল ডাউন হলে লুকানো */
-}
-
-header .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
-}
-
-/* লোগো */
-.logo h1 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  font-family: 'Baloo 2', cursive;
-}
-
-.logo p {
-  font-size: 0.9rem;
-  color: var(--light-color);
-  font-style: italic;
-}
-
-/* নেভিগেশন */
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin-left: 1.5rem;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-  padding: 0.5rem 0;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-}
-
-nav ul li a:hover {
-  color: var(--secondary-color);
-}
-
-nav ul li a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--secondary-color);
-  transition: width 0.3s;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
-/* Hamburger আইকন ডিফল্ট লুকানো ডেক্সটপে */
-.hamburger {
-  display: none;
-}
-
-/* মোবাইলের জন্য */
-@media (max-width: 768px) {
-  /* হামবার্গার দেখাবে ডান পাশে */
-  .hamburger {
-    display: block;
-    cursor: pointer;
-    width: 25px;
-    height: 20px;
-    position: relative;
-    z-index: 1100;
-  }
-
-  .hamburger span {
-    background: white;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  .hamburger span:nth-child(1) {
-    top: 0;
-  }
-  .hamburger span:nth-child(2) {
-    top: 8.5px;
-  }
-  .hamburger span:nth-child(3) {
-    top: 17px;
-  }
-
-  /* Hamburger active হলে X আইকন */
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg);
-    top: 8.5px;
-  }
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg);
-    top: 8.5px;
-  }
-
-  /* নেভিগেশন লুকানো */
-  nav ul {
-    position: fixed;
-    top: 0;
-    right: -250px; /* বাইরে রাখছি */
-    height: 100vh;
-    width: 250px;
     background-color: var(--primary-color);
-    flex-direction: column;
-    padding-top: 4rem;
-    transition: right 0.3s ease;
-    box-shadow: -4px 0 12px rgba(0,0,0,0.2);
-    z-index: 1050;
-  }
-
-  /* নেভিগেশন এক্টিভ হলে দেখাবে ডান থেকে স্লাইড ইন */
-  nav ul.active {
-    right: 0;
-  }
-
-  nav ul li {
-    margin: 20px 0;
-    text-align: center;
-  }
-
-  nav ul li a {
-    font-size: 1.2rem;
-    padding: 10px 0;
-    display: block;
-  }
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease, background-color 0.3s ease;
 }
+
+/* হেডার স্ক্রল করলে লুকানো হবে */
+header.hidden {
+    top: -100px; /* উপরের দিকে চলে যাবে */
+}
+
+/* স্ক্রল করলে হেডারের রং একটু গাঢ় পিঙ্ক হবে */
+header.scrolled {
+    background-color: var(--secondary-color);
+}
+
+/* বাকি সব আগের মতোই থাকবে */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.logo p {
+    font-size: 0.9rem;
+    color: var(--light-color);
+    font-style: italic;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+
+
+
 
 
 
