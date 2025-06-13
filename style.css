@@ -697,9 +697,6 @@ body {
 
 
 
-
-
-
 /* Cute & Soft Header Background */
 header {
   background: #9c206c;
@@ -708,7 +705,7 @@ header {
   top: 0;
   z-index: 100;
   transition: top 0.3s ease;
-  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3); /* soft pink shadow */
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
   font-family: 'Poppins', sans-serif;
@@ -728,17 +725,17 @@ header .container {
 /* Logo */
 .logo h1 {
   font-size: 1.9rem;
-  color: #f4f3f3;  /* pretty pink */
+  color: #f4f3f3;
   margin: 0;
   font-weight: 700;
   letter-spacing: 2px;
-  font-family: 'Baloo 2', cursive; /* playful font */
+  font-family: 'Baloo 2', cursive;
   text-shadow: 1px 1px 3px #f8bbd0;
 }
 
 .logo p {
   font-size: 1.05rem;
-  color: #e8dee1; /* lighter pink */
+  color: #e8dee1;
   margin-top: 5px;
   font-style: italic;
   letter-spacing: 0.5px;
@@ -775,7 +772,24 @@ nav ul li a:focus {
   outline: none;
 }
 
-/* Mobile Responsive */
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 25px;
+  height: 20px;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #f4f3f3;
+  border-radius: 2px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   header .container {
     flex-direction: column;
@@ -799,10 +813,30 @@ nav ul li a:focus {
     text-align: center;
     padding: 12px 0;
     font-size: 1.2rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hide nav by default on mobile */
+  nav#nav-menu {
+    display: none;
+    width: 100%;
+  }
+
+  /* Show nav when active */
+  nav#nav-menu.active {
+    display: block;
   }
 }
 
-/* Smaller devices */
 @media (max-width: 400px) {
   .logo h1 {
     font-size: 1.5rem;
@@ -816,21 +850,5 @@ nav ul li a:focus {
     font-size: 1rem;
     padding: 10px 0;
     width: 90%;
-  }
-}
-
-
-/* মোবাইলের জন্য nav ul li a এর টেক্সট কাটার জন্য */
-@media (max-width: 768px) {
-  nav ul li a {
-    width: 80%;
-    text-align: center;
-    padding: 12px 0;
-    font-size: 1.2rem;
-    
-    white-space: nowrap;       /* এক লাইনে রাখবে */
-    overflow: hidden;          /* ওভারফ্লো লুকাবে */
-    text-overflow: ellipsis;   /* তিন ডট দেখাবে */
-    display: block;            /* ব্লক এলিমেন্ট বানাবে */
   }
 }

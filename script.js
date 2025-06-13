@@ -132,18 +132,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
 
-  let lastScrollY = window.scrollY;
-  const header = document.querySelector('header');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > lastScrollY) {
-      // Scrolling Down
-      header.style.top = '-100px'; // hide
-    } else {
-      // Scrolling Up
-      header.style.top = '0'; // show
-    }
-    lastScrollY = window.scrollY;
-  });
-
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+});
