@@ -133,8 +133,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
-  navMenu.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Scroll hide/show header
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if(scrollTop > lastScrollTop){
+    // Scroll down — hide header
+    header.classList.add('hidden');
+  } else {
+    // Scroll up — show header
+    header.classList.remove('hidden');
+  }
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
