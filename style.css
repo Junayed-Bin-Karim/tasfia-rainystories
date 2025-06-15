@@ -283,7 +283,7 @@ nav ul {
 }
 
 .expandable-content.show {
-    max-height: 5000px; /* পর্যাপ্ত বড় মান */
+    max-height: 10000px; /* পর্যাপ্ত বড় মান */
 }
 
 /* লেখক সম্পর্কে সেকশন */
@@ -897,9 +897,3 @@ body {
 
 
    
-@media only screen and (max-width: 768px) {
-  .expandable-content {
-    max-height: none !important;
-    overflow: visible !important;
-  }
-}
