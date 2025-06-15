@@ -154,19 +154,18 @@ nav ul {
     padding: 14rem 0;
     text-align: center;
 }
+/* মোবাইল ডিভাইসের জন্য */
 @media (max-width: 768px) {
     .hero {
-        padding: 6rem 1rem;
-        background-position: center center;
-        background-size: cover;
-        height: 100vh;
+        padding: 6rem 1rem; /* প্যাডিং কমিয়ে দিচ্ছি */
+        background-position: center center; /* ইমেজ যেন পুরোটা মাঝখানে থাকে */
+        background-size: cover; /* পুরো স্ক্রিন কভার করুক */
+        height: 100vh; /* ভিউপোর্ট হাইট ফিট করাবে */
         display: flex;
         flex-direction: column;
-        justify-content: flex-start; /* নিচ থেকে না, উপরের দিকে সরাবে */
-        padding-top: 4rem; /* উপরের থেকে একটু জায়গা দিবে */
+        justify-content: center;
     }
 }
-
 .hero-content h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
