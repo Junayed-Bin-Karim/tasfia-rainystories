@@ -954,3 +954,10 @@ body {
         white-space: normal;
     }
 }
+.ending {
+    max-height: none;
+    overflow: visible;
+    display: block;
+    word-wrap: break-word;
+    white-space: normal;
+}
