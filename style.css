@@ -916,8 +916,6 @@ body {
 
 
   
-
- 
 .thoughts {
     font-style: italic;
     color: #555;
@@ -926,8 +924,10 @@ body {
     border-radius: 8px;
     margin: 20px 0;
     border-left: 3px solid #95a5a6;
-    word-wrap: break-word;  /* টেক্সট ব্রেক করবে মোবাইলে */
-    white-space: normal;    /* টেক্সট ব্রেক/র‍্যাপ ঠিক থাকবে */
+    word-wrap: break-word;  /* মোবাইলে শব্দ ভাঙবে */
+    white-space: normal;    /* টেক্সট র‍্যাপ ঠিক থাকবে */
+    overflow-wrap: break-word; /* বেশি গুরুত্বপূর্ণ */
+    overflow: visible;      /* নিশ্চিত overflow না হয় */
 }
 
 .ending {
@@ -942,22 +942,20 @@ body {
     line-height: 2;
     word-wrap: break-word;
     white-space: normal;
+    max-height: none;       /* উচ্চতা সীমাবদ্ধ করা নেই */
+    overflow: visible;      /* কনটেন্ট লুকানো হবে না */
+    display: block;
 }
 
-/* মোবাইলের জন্য আরও ভাল দেখানোর জন্য */
+/* মোবাইল ডিভাইসে ফন্ট সাইজ, মার্জিন ও প্যাডিং সামঞ্জস্য */
 @media (max-width: 768px) {
     .thoughts, .ending {
-        font-size: 1rem;          /* ফন্ট একটু ছোট করা */
-        padding: 12px 10px;       /* প্যাডিং সামঞ্জস্য */
+        font-size: 1rem;          /* ফন্ট একটু ছোট */
+        padding: 12px 10px;       /* প্যাডিং কমানো */
         margin: 15px 10px;        /* মার্জিন সামান্য কমানো */
         overflow-wrap: break-word;
         white-space: normal;
+        max-height: none;
+        overflow: visible;
     }
-}
-.ending {
-    max-height: none;
-    overflow: visible;
-    display: block;
-    word-wrap: break-word;
-    white-space: normal;
 }
