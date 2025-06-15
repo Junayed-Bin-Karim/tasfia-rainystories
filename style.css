@@ -931,3 +931,23 @@ body {
   
 
 
+/* মোবাইল স্ক্রিনের জন্য media query */
+@media (max-width: 768px) {
+    body {
+        /* background fixed মোবাইলেই off */
+        background-attachment: scroll !important;
+        /* প্রয়োজন হলে font-size সামান্য বড়/ছোট করো */
+        font-size: 1rem;
+        line-height: 1.6;
+        padding: 10px; /* একটু প্যাডিং বাড়াতে পারো */
+    }
+    
+    /* যদি কোনো container বা div overflow করে */
+    .message, .memory-box, .thoughts, .visual-desc {
+        overflow-wrap: break-word; /* টেক্সট ব্রেক করে মোবাইলের জন্য */
+        word-wrap: break-word;
+        word-break: break-word;
+        hyphens: auto;
+        width: 100%;
+    }
+}
