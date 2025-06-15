@@ -916,3 +916,24 @@ body {
 
 
    
+@media (max-width: 768px) {
+  body {
+    background: #330066; /* Solid color instead of animation */
+    animation: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .chapter-card {
+    margin: 10px 0;
+    border-radius: 8px;
+  }
+  
+  .chapter-header {
+    padding: 1rem;
+  }
+  
+  .chapter-content {
+    padding: 1rem;
+  }
+}
