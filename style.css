@@ -149,10 +149,22 @@ nav ul {
 
 /* হিরো সেকশন */
 .hero {
-    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+    background: linear-gradient(#f2edf3cc, rgba(234, 74, 180, 0.8)), url('https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
     color: white;
-    padding: 5rem 0;
+    padding: 14rem 0;
     text-align: center;
+}
+@media (max-width: 768px) {
+    .hero {
+        padding: 6rem 1rem;
+        background-position: center center;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* নিচ থেকে না, উপরের দিকে সরাবে */
+        padding-top: 4rem; /* উপরের থেকে একটু জায়গা দিবে */
+    }
 }
 
 .hero-content h2 {
