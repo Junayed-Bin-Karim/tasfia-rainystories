@@ -168,7 +168,7 @@ nav ul {
   }
 
   .hero > * { /* hero এর সরাসরি চাইল্ড এলে */
-    margin-bottom: 6rem; /* একটু নিচে স্পেস রাখতে */
+    margin-bottom: 8rem; /* একটু নিচে স্পেস রাখতে */
   }
 }
 
